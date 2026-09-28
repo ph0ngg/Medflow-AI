@@ -1,0 +1,32 @@
+[project]
+name = "medflow-ai-backend"
+version = "2.0.0"
+description = "MedFlow AI - Backend (FastAPI) kiosk AI hội thoại tiếp đón bệnh nhân"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.100.0",
+    "uvicorn[standard]>=0.23.0",
+    "python-multipart>=0.0.6",
+    "python-dotenv>=1.0",
+    "sqlalchemy>=2.0",
+    "numpy>=1.24",
+    "opencv-python>=4.8",
+    "onnxruntime>=1.16",
+    "faiss-cpu>=1.7",
+    "scipy>=1.10",
+    "Pillow>=10.0",
+    "openai>=1.0",
+    "cohere>=5.0",
+    "edge-tts>=6.0",
+]
+
+[project.optional-dependencies]
+stt = ["transformers>=4.30"]
+test = ["pytest>=7.0", "httpx>=0.24"]
+
+[tool.setuptools]
+packages = ["app", "ai_modules"]
+
+[tool.pytest.ini_options]
+testpaths = ["../tests"]
+pythonpath = ["."]

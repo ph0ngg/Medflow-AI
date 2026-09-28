@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedFlow AI - Kiosk Tiếp Đón</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header>
+            <h1>🏥 MedFlow AI</h1>
+            <p>Kiosk tiếp đón thông minh</p>
+        </header>
+
+        <!-- Main Content -->
+        <main id="main-content">
+            <!-- Màn hình chờ -->
+            <div id="screen-idle" class="screen active">
+                <div class="camera-container">
+                    <video id="camera-feed" autoplay playsinline></video>
+                    <canvas id="camera-canvas" style="display:none"></canvas>
+                </div>
+                <div class="status-bar">
+                    <p>🟢 Hệ thống sẵn sàng. Vui lòng đứng trước camera.</p>
+                </div>
+            </div>
+
+            <!-- Màn hình hội thoại -->
+            <div id="screen-chat" class="screen">
+                <div class="chat-container">
+                    <div id="chat-messages" class="chat-messages">
+                        <!-- Messages sẽ được thêm bằng JS -->
+                    </div>
+                </div>
+                <div class="input-area">
+                    <button id="btn-voice" class="btn-voice" title="Nhấn để nói">
+                        🎤
+                    </button>
+                    <input type="text" id="text-input" placeholder="Nhập câu trả lời..." />
+                    <button id="btn-send" class="btn-send">Gửi</button>
+                </div>
+            </div>
+
+            <!-- Màn hình kết quả -->
+            <div id="screen-result" class="screen">
+                <div id="result-content">
+                    <!-- Kết quả sẽ hiển thị ở đây -->
+                </div>
+                <button id="btn-new-session" class="btn-primary">🔄 Phiên mới</button>
+            </div>
+
+            <!-- Màn hình khẩn cấp -->
+            <div id="screen-emergency" class="screen emergency">
+                <h2>⚠️ CẢNH BÁO</h2>
+                <p id="emergency-message"></p>
+                <p>Vui lòng liên hệ nhân viên y tế ngay!</p>
+                <button id="btn-emergency-ok" class="btn-primary">Đã hiểu</button>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>MedFlow AI v0.1 - Phiên bản thử nghiệm</p>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
